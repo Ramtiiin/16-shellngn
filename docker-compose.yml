@@ -1,0 +1,16 @@
+version: "3.5"
+
+services:
+  shellngn:
+    image: shellngn/pro
+    network_mode: "bridge"
+    container_name: shellngn
+    ports:
+      - "9090:8080"
+    volumes:
+      - shellngn-data:/home/node/server/data
+    environment:
+      - HOST=0.0.0.0
+    restart: always
+volumes:
+  shellngn-data:
